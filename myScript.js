@@ -2,6 +2,10 @@ let computerScore = 0;
 let playerScore = 0;
 function playGame(playerSelection) { 
     const choices = ["paper", "rock", "scissors"];
+    var winModal = document.getElementById("winModal");
+    var loseModal = document.getElementById("loseModal");
+    var wspan = document.getElementsByClassName("wclose")[0];
+    var lspan = document.getElementsByClassName("lclose")[0];
     for (let i=0;(computerScore<5)&&(playerScore<5); i++){
         let computerSelection = choices[Math.floor(Math.random() * choices.length)];
         if ((playerSelection == "rock" && computerSelection == "scissors") || (playerSelection == "scissors" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "rock")) {
@@ -31,8 +35,12 @@ function playGame(playerSelection) {
         }else if (playerScore === 5) {
             document.getElementById("play-score").src ="rps-images/player5.png";
             setTimeout(function() {
-                alert ("You are the champion!");
+                winModal.style.display = "block";
             },150);
+            wspan.onclick = function() {
+                winModal.style.display = "none";
+                window.location.reload();
+            }
         } else {
             document.getElementById("play-score").src ="";
         }
@@ -47,8 +55,13 @@ function playGame(playerSelection) {
         }else if (computerScore === 5) {
             document.getElementById("comp-score").src ="rps-images/computer5.png";
             setTimeout(function() {
-                alert ("You have been defeated.");
-            },150);
+                //alert ("You have been defeated.");
+                loseModal.style.display = "block";
+            },150);        
+            lspan.onclick = function() {
+                loseModal.style.display = "none";
+                window.location.reload();
+            }
         }else{
             document.getElementById("comp-score").src ="";
         }
