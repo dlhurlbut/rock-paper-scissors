@@ -5,13 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    <script src="./myScript.js"></script>
+    <script src="./myScript.js" delay></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script>
-        let turnip="ym";
-    </script>
-   
-    
+    </div>
+    <div id="wrapper"></div>
+        <div class="header">
+            <img src="rps-images/DH-logo.JPG" alt="Denice Hurlbut">
+            <div class="button" onClick="window.location.reload();">Reset</div>
+        </div>
+        <div class="content">   
+            <div class="block-1">
+                <div class="title">Rock, Paper, Scissors</div>   
+            </div>
+            <div class="block-2">
+                <div class="b2-top">
+                    <div class="content-head">choose</div>
+                    <div class="card-container">
+                        <div class="card" id="rock" onclick="playGame(this.id)">
+                            <img src="rps-images/rock.png" alt="hand in rock position">
+                        </div>
+                        <div class="card" id="paper" onclick="playGame(this.id)">
+                            <img src="rps-images/paper.png" alt="hand in paper position">
+                        </div>
+                        <div class="card" id="scissors" onclick="playGame(this.id)">
+                            <img src="rps-images/scissors.png" alt="hand in scissors position">
+                        </div>
+                    </div>
+                </div>
+                <div class="b2-bottom">
+                    <div class="computer">
+                        <div class="content-head">The computer chose:</div>
+                        <div class="img-box">
+                            <div id="comp-pic">
+                                <img id="computerPicture" src="rps-images/question.png" alt="question mark">
+                            </div>
+                        </div>
+                        <div id="winnerDeclaration" class="content-head"></div>
+                    </div>
+                    <div class="scores">
+                        <div class="your-score">
+                            <div class="score-title">your score</div>
+                            <img id="play-score" src="">
+                        </div>
+                        <div class="computer-score">
+                            <div class="score-title">computer score</div>
+                            <img id="comp-score" src="">
+                        </div>
+                    </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfooter"></div> 
+    </div>
+    <div class="footer">Copyright &copy The Odin Project 2022</div>
 </body>
 </html>
